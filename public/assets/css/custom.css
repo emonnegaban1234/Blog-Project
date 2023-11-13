@@ -11,3 +11,17 @@
     padding: 8px 18px !important;
 
 }
+
+.card-shadow{
+    box-shadow: 0 2px 8px rgb(0 0 0 /10%);
+    border-radius: 5px;
+}
+.category-heading{
+    padding: 10px 12px;
+    border-left: 6px solid #000;
+    background-color: #ddd;
+}
+.post-heading{
+    font-size:22px;
+    color: #000;
+}

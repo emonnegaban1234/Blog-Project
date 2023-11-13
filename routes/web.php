@@ -20,9 +20,11 @@ use App\Http\Controllers\Frontend\FrontendController;
 */
 
 Route::get('/',[FrontendController::class, 'index']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('tutorial/{category_slug}',[FrontendController::class, 'viewcategory']);
 
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
 

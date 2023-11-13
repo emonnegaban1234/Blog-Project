@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link " href="#">Home</a>
+          <a class="nav-link " href="{{url('/')}}">Home</a>
         </li>
         <!--
         <li class="nav-item dropdown">
@@ -35,11 +35,12 @@
         </li> -->
         @php
         $categories = App\Models\Category::where('navbar_status','0')->where('status','0')->get();
+        
         @endphp
         
         @foreach ($categories as $ceteitem)
         <li class="nav-item">
-          <a class="nav-link" href="{{$ceteitem->slug}}">{{$ceteitem->name}}</a>
+          <a class="nav-link" href="{{url('tutorial/'.$ceteitem->slug)}}">{{$ceteitem->name}}</a>
         </li>
         @endforeach
 

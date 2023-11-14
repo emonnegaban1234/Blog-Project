@@ -37,6 +37,19 @@
           <h4>Advertising Area</h4>
         </div>
 
+        <div class="card" mt-3>
+            <div class="card-header">
+                <h4>Latest post</h4>
+            </div>
+            <div class="card-body">
+                @foreach($latset_posts as $latset_posts_item)
+                <a href="" class="text-decoration-none">
+                    <h6>{{$latset_posts_item->post_name}}</h6>
+                </a>
+                @endforeach
+            </div>
+        </div>
+
     </div>
   </div>
  </div>

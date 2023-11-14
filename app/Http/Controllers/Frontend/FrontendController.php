@@ -31,7 +31,8 @@ class FrontendController extends Controller
        
         if($category){
             $post = Post::where('category_id',$category->id)->where('slug', $post_slug)->where('status','0')->first();
-            return view('frontend.post.view',compact('post'));
+            $latset_posts = Post::where('category_id',$category->id)->orderBy('created_at', 'DESC')->where('status','0')->get();
+            return view('frontend.post.view',compact('post','latset_posts'));
         }
         else{
             return redirect('/');

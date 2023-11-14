@@ -25,3 +25,15 @@
     font-size:22px;
     color: #000;
 }
+
+.owl-nav button.owl-next,
+.owl-nav button.owl-prev{
+    color: #fff !important;
+    margin-left: 10px;
+    background-color: orange !important;
+    border: none !important;
+    outline: none;
+    font-size: 20px !important;
+    height: 28px;
+    width: 38px !important;
+}

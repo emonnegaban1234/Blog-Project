@@ -43,7 +43,7 @@
             </div>
             <div class="card-body">
                 @foreach($latset_posts as $latset_posts_item)
-                <a href="" class="text-decoration-none">
+                <a href="{{url('tutorial/'.$latset_posts_item->category->name.'/'.$latset_posts_item->slug )}}" class="text-decoration-none">
                     <h6>{{$latset_posts_item->post_name}}</h6>
                 </a>
                 @endforeach

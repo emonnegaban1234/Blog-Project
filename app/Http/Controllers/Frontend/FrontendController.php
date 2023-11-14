@@ -10,7 +10,8 @@ use App\Models\Post;
 class FrontendController extends Controller
 {
     function index(){
-        return view('frontend.index');
+        $all_category = Category::where('status','0')->get();
+        return view('frontend.index',compact('all_category'));
     }
     
     function viewcategory(string $category_slug){
@@ -31,7 +32,7 @@ class FrontendController extends Controller
        
         if($category){
             $post = Post::where('category_id',$category->id)->where('slug', $post_slug)->where('status','0')->first();
-            $latset_posts = Post::where('category_id',$category->id)->orderBy('created_at', 'DESC')->where('status','0')->get();
+            $latset_posts = Post::where('category_id',$category->id)->orderBy('created_at', 'DESC')->where('status','0')->get()->take(2);
             return view('frontend.post.view',compact('post','latset_posts'));
         }
         else{

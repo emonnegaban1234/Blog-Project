@@ -38,7 +38,7 @@
     <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
 
     <script>
-        $('.category-carousel').owlCarousel({
+        $('.owl-carousel').owlCarousel({
     loop:true,
     dots:false,
     margin:10,
@@ -48,10 +48,10 @@
             items:1
         },
         600:{
-            items:3
+            items:2
         },
         1000:{
-            items:4
+            items:3
         }
     }
 })

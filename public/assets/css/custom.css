@@ -25,6 +25,10 @@
     font-size:22px;
     color: #000;
 }
+.item_image{
+    height: 130px;
+    width: 60px;
+}
 
 .owl-nav button.owl-next,
 .owl-nav button.owl-prev{
@@ -36,4 +40,14 @@
     font-size: 20px !important;
     height: 28px;
     width: 38px !important;
+}
+
+.underline{
+    height: 3px;
+    width: 60px;
+    background-color: #e71212;
+    margin-bottom: 10px;
+}
+.bg-gray{
+   background-color: #ddd;
 }

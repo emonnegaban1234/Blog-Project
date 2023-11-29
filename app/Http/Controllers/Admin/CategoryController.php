@@ -136,8 +136,9 @@ class CategoryController extends Controller
         if(File::exists($deleteimage)){
             File::delete($deleteimage);
         }       
-            $categories->delete();      
-            return redirect('admin/category')->with('message', 'Category successfully added');
+        $categories->posts()->delete();  
+        $categories->delete();      
+            return redirect('admin/category')->with('message', 'Category with its posts successfully deleted');
     
     }
 

@@ -77,13 +77,14 @@
                 <h4>Latest Post</h4>
                 <div class="underline"></div>    
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 ">
             @foreach($latest_post as $latest_post_item)
             
                 <div class="card card-body bg-gray shadow mb-3">
                     <a href="{{url('tutorial/'.$latest_post_item->category->slug).'/'.$latest_post_item->slug}}" class="text-decoration-none">
                         <h5 class="text-dark mb-0">{{$latest_post_item->post_name}}</h5>
                     </a>
+                    <h6>Posted on: {{$latest_post_item->created_at}}</h6>
                 </div>
             
             @endforeach

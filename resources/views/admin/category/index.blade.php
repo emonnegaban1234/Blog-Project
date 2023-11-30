@@ -3,6 +3,28 @@
 @section('title','Category')
 @section('content')
 
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Category with it' post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="category_delete_id" id="category_id">
+        <h5>Are you sure delete category with its post. ?</h5>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="container-fluid px-4">
         <div class="card">
@@ -45,7 +67,7 @@
                             </td>
                             <td>
                                 <!-- <a href="{{url('admin/delete-category/'.$item->id)}}" class="btn btn-danger">Delete</a> -->
-                            <button type="button" class="btn btn-danger deleteCategorybtn" value="{{$item->id}}">Delete</button> 
+                            <button type="button" class="btn btn-danger deleteCategorybtn" value="{{ $item->id}}">Delete</button> 
                             </td>
                         </tr>
                         @endforeach
@@ -71,8 +93,13 @@
 <script>
     $(document).ready(function(){
     $('deleteCategorybtn').click(function(e){
-        e.preventDefault()
-    })
+        e.preventDefault();
+
+        var category_id = $(this).val(category_id);
+        $(#category_id).val();
+        $('#deleteModal').modal('show');
+
+    });
     });
 </script>
 

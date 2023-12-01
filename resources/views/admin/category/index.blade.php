@@ -6,6 +6,9 @@
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+      <form action="{{url('admin/delete-category')}}" method= "post">
+    @csrf
+
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Delete Category with it' post</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -13,14 +16,16 @@
         </button>
       </div>
       <div class="modal-body">
-        <input type="text" name="category_delete_id" id="category_id">
+        <input type="hidden" name="category_delete_id" id="category_id">
         <h5>Are you sure delete category with its post. ?</h5>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
+        <button type="submit" class="btn btn-danger">Yes Delete</button>
       </div>
+
+      </form>
     </div>
   </div>
 </div>
@@ -67,7 +72,7 @@
                             </td>
                             <td>
                                 <!-- <a href="{{url('admin/delete-category/'.$item->id)}}" class="btn btn-danger">Delete</a> -->
-                            <button type="button" class="btn btn-danger deleteCategorybtn" value="{{ $item->id}}">Delete</button> 
+                            <button type="button" class="btn btn-danger deleteCategoryBtn" value="{{ $item->id}}">Delete</button> 
                             </td>
                         </tr>
                         @endforeach
@@ -92,11 +97,15 @@
 @section('scripts')
 <script>
     $(document).ready(function(){
-    $('deleteCategorybtn').click(function(e){
+    //$('.deleteCategoryBtn').click(function(e){
+      $(document).on('click','deleteCategoryBtn', function(e){
+
+     // })
         e.preventDefault();
 
-        var category_id = $(this).val(category_id);
-        $(#category_id).val();
+        var category_id = $(this).val();
+        $('#category_id').val(category_id);
+
         $('#deleteModal').modal('show');
 
     });

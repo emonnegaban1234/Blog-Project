@@ -126,9 +126,9 @@ class CategoryController extends Controller
      }
 
      
-    function destroy($category_id){
+    function destroy(Request $request){
 
-    $categories = Category::findOrFail($category_id);
+    $categories = Category::findOrFail($request->category_delete_id);
     if($categories){
 
         $deleteimage = 'uploads/'.$categories->image;
